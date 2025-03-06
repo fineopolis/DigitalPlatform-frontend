@@ -9,3 +9,8 @@ export const getUserProfile = async () => {
   const response = await apiClient.get("/auth/profile");
   return response.data.user;
 };
+
+export const register = async (name: string, email: string, password: string, role: string) => {
+    const response = await apiClient.post("/auth/register", { name, email, password, role });
+    return response.data; // Renvoie l'utilisateur créé
+  };
